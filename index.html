@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CalmaMente - Tu espacio de bienestar</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- HEADER / NAVEGACIÓN -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>🧠 CalmaMente</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#emociones">¿Cómo me siento?</a></li>
+                    <li><a href="#test">Test rápido</a></li>
+                    <li><a href="#herramientas">Herramientas</a></li>
+                    <li><a href="#ayuda">Pide ayuda</a></li>
+                    <li><a href="#crisis" class="btn-crisis">🚨 Crisis</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="inicio" class="hero">
+        <div class="container">
+            <h2>No estás solo. Aquí puedes encontrar calma.</h2>
+            <p>Un espacio seguro para entender lo que sientes, aprender a manejarlo y pedir ayuda cuando la necesites.</p>
+            <a href="#emociones" class="btn-primary">¿Cómo te sientes hoy?</a>
+            <p class="disclaimer">CalmaMente es una herramienta de orientación y apoyo. No reemplaza la atención psicológica profesional.</p>
+        </div>
+    </section>
+
+    <!-- SECCIÓN: ¿CÓMO ME SIENTO? -->
+    <section id="emociones" class="emociones">
+        <div class="container">
+            <h2>Identifica lo que sientes</h2>
+            <p>Selecciona la emoción que más se acerca a lo que estás experimentando ahora mismo</p>
+            
+            <div class="emociones-grid">
+                <div class="emocion-card" data-emocion="ansiedad">
+                    <span class="emoji">😰</span>
+                    <h3>Ansiedad</h3>
+                </div>
+                <div class="emocion-card" data-emocion="tristeza">
+                    <span class="emoji">😢</span>
+                    <h3>Tristeza</h3>
+                </div>
+                <div class="emocion-card" data-emocion="estres">
+                    <span class="emoji">😫</span>
+                    <h3>Estrés</h3>
+                </div>
+                <div class="emocion-card" data-emocion="soledad">
+                    <span class="emoji">🥺</span>
+                    <h3>Soledad</h3>
+                </div>
+                <div class="emocion-card" data-emocion="enojo">
+                    <span class="emoji">😠</span>
+                    <h3>Enojo</h3>
+                </div>
+                <div class="emocion-card" data-emocion="confusion">
+                    <span class="emoji">😕</span>
+                    <h3>Confusión</h3>
+                </div>
+                <div class="emocion-card" data-emocion="abrumado">
+                    <span class="emoji">😵</span>
+                    <h3>Abrumado</h3>
+                </div>
+            </div>
+
+            <!-- Contenido dinámico de emociones -->
+            <div id="emocion-contenido" class="emocion-contenido oculto">
+                <button id="cerrar-emocion" class="btn-cerrar">✕</button>
+                <h3 id="emocion-titulo"></h3>
+                <p id="emocion-mensaje"></p>
+                <h4>Qué hacer ahora:</h4>
+                <ul id="emocion-acciones"></ul>
+                <a href="#ayuda" class="btn-secondary">Necesito ayuda profesional</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN: TEST RÁPIDO -->
+    <section id="test" class="test">
+        <div class="container">
+            <h2>¿Cómo estás realmente?</h2>
+            <p>Responde estas 5 preguntas y descubre tu nivel de bienestar emocional</p>
+            
+            <div id="test-formulario">
+                <div class="pregunta">
+                    <p><strong>1.</strong> En la última semana, ¿con qué frecuencia te has sentido nervioso, ansioso o con los nervios de punta?</p>
+                    <label><input type="radio" name="p1" value="0"> Nunca</label>
+                    <label><input type="radio" name="p1" value="1"> Algunos días</label>
+                    <label><input type="radio" name="p1" value="2"> Más de la mitad de los días</label>
+                    <label><input type="radio" name="p1" value="3"> Casi todos los días</label>
+                </div>
+
+                <div class="pregunta">
+                    <p><strong>2.</strong> ¿Has podido dejar de preocuparte o controlar tus preocupaciones?</p>
+                    <label><input type="radio" name="p2" value="0"> Nunca</label>
+                    <label><input type="radio" name="p2" value="1"> Algunos días</label>
+                    <label><input type="radio" name="p2" value="2"> Más de la mitad de los días</label>
+                    <label><input type="radio" name="p2" value="3"> Casi todos los días</label>
+                </div>
+
+                <div class="pregunta">
+                    <p><strong>3.</strong> ¿Te has sentido desanimado, deprimido o sin esperanza?</p>
+                    <label><input type="radio" name="p3" value="0"> Nunca</label>
+                    <label><input type="radio" name="p3" value="1"> Algunos días</label>
+                    <label><input type="radio" name="p3" value="2"> Más de la mitad de los días</label>
+                    <label><input type="radio" name="p3" value="3"> Casi todos los días</label>
+                </div>
+
+                <div class="pregunta">
+                    <p><strong>4.</strong> ¿Has tenido poco interés o placer en hacer cosas?</p>
+                    <label><input type="radio" name="p4" value="0"> Nunca</label>
+                    <label><input type="radio" name="p4" value="1"> Algunos días</label>
+                    <label><input type="radio" name="p4" value="2"> Más de la mitad de los días</label>
+                    <label><input type="radio" name="p4" value="3"> Casi todos los días</label>
+                </div>
+
+                <div class="pregunta">
+                    <p><strong>5.</strong> ¿Cómo calificarías tu calidad de sueño en la última semana?</p>
+                    <label><input type="radio" name="p5" value="0"> Excelente</label>
+                    <label><input type="radio" name="p5" value="1"> Buena</label>
+                    <label><input type="radio" name="p5" value="2"> Regular</label>
+                    <label><input type="radio" name="p5" value="3"> Mala</label>
+                </div>
+
+                <button id="calcular-test" class="btn-primary">Ver resultado</button>
+            </div>
+
+            <div id="test-resultado" class="test-resultado oculto">
+                <h3 id="resultado-titulo"></h3>
+                <p id="resultado-mensaje"></p>
+                <button id="reiniciar-test" class="btn-secondary">Responder de nuevo</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN: HERRAMIENTAS -->
+    <section id="herramientas" class="herramientas">
+        <div class="container">
+            <h2>Herramientas para tu bienestar</h2>
+            <p>Técnicas prácticas basadas en evidencia para manejar tus emociones</p>
+            
+            <div class="herramientas-grid">
+                <div class="herramienta-card">
+                    <h3>🌬️ Respiración 4-7-8</h3>
+                    <p>Activa tu sistema nervioso parasimpático para calmarte en minutos.</p>
+                    <ol>
+                        <li>Siéntate cómodamente</li>
+                        <li>Inhala por la nariz contando hasta 4</li>
+                        <li>Sostén la respiración contando hasta 7</li>
+                        <li>Exhala por la boca contando hasta 8</li>
+                        <li>Repite 3-4 veces</li>
+                    </ol>
+                </div>
+
+                <div class="herramienta-card">
+                    <h3>👁️ Grounding 5-4-3-2-1</h3>
+                    <p>Técnica de anclaje sensorial para momentos de ansiedad.</p>
+                    <ul>
+                        <li>Nombra 5 cosas que puedes VER</li>
+                        <li>Nombra 4 cosas que puedes TOCAR</li>
+                        <li>Nombra 3 cosas que puedes OÍR</li>
+                        <li>Nombra 2 cosas que puedes OLER</li>
+                        <li>Nombra 1 cosa que puedes SABOREAR</li>
+                    </ul>
+                </div>
+
+                <div class="herramienta-card">
+                    <h3>📝 Journaling emocional</h3>
+                    <p>Escribir tus pensamientos ayuda a procesarlos.</p>
+                    <p><strong>Prompts sugeridos:</strong></p>
+                    <ul>
+                        <li>"Hoy me siento..."</li>
+                        <li>"Lo que más me preocupa es..."</li>
+                        <li>"Algo por lo que estoy agradecido es..."</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN: PIDE AYUDA -->
+    <section id="ayuda" class="ayuda">
+        <div class="container">
+            <h2>No tienes que hacerlo solo</h2>
+            <p>Hay personas y recursos listos para ayudarte</p>
+            
+            <div class="ayuda-grid">
+                <div class="ayuda-card">
+                    <h3>📞 Línea 106</h3>
+                    <p>Servicio gratuito de orientación psicológica 24/7 en Colombia</p>
+                    <p><strong>Teléfono:</strong> 106</p>
+                    <p><strong>Horario:</strong> 24 horas, todos los días</p>
+                </div>
+
+                <div class="ayuda-card">
+                    <h3>🏥 Psicólogos del SENA</h3>
+                    <p>Servicio de bienestar psicológico para estudiantes</p>
+                    <p><strong>Contacto:</strong> [Info de tu centro]</p>
+                    <p><strong>Horario:</strong> [Horario real]</p>
+                </div>
+
+                <div class="ayuda-card">
+                    <h3>📧 Formulario de solicitud</h3>
+                    <p>Completa este formulario y te contactaremos</p>
+                    <form id="form-ayuda">
+                        <input type="text" placeholder="Nombre (opcional)">
+                        <input type="email" placeholder="Correo electrónico" required>
+                        <select required>
+                            <option value="">¿Qué tipo de apoyo necesitas?</option>
+                            <option value="orientacion">Orientación</option>
+                            <option value="cita">Cita con psicólogo</option>
+                            <option value="crisis">Crisis</option>
+                        </select>
+                        <textarea placeholder="Mensaje (opcional)" rows="4"></textarea>
+                        <button type="submit" class="btn-primary">Enviar solicitud</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN: CRISIS -->
+    <section id="crisis" class="crisis">
+        <div class="container">
+            <h2>🚨 ¿Estás en crisis?</h2>
+            <p>Si estás pensando en hacerte daño o sientes que no puedes más, contacta AHORA:</p>
+            <ul>
+                <li><strong>Línea 106:</strong> 106 (24/7, gratuito)</li>
+                <li><strong>Línea de emergencia:</strong> 123</li>
+                <li><strong>Acude al hospital más cercano</strong></li>
+            </ul>
+            <p class="mensaje-final">No estás solo. Hay personas que quieren ayudarte.</p>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <p>CalmaMente © 2026</p>
+            <p>Un proyecto desarrollado para el SENA</p>
+            <p>Recuerda: pedir ayuda es un acto de valentía 💙</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
