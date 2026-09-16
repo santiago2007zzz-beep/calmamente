@@ -1,4 +1,6 @@
+// =========================================
 // DATOS DE EMOCIONES
+// =========================================
 const emocionesData = {
     ansiedad: {
         titulo: "Ansiedad",
@@ -65,7 +67,9 @@ const emocionesData = {
     }
 };
 
+// =========================================
 // FUNCIONALIDAD DE EMOCIONES
+// =========================================
 document.querySelectorAll('.emocion-card').forEach(card => {
     card.addEventListener('click', function() {
         const emocion = this.dataset.emocion;
@@ -82,8 +86,12 @@ document.querySelectorAll('.emocion-card').forEach(card => {
             accionesList.appendChild(li);
         });
         
-        document.getElementById('emocion-contenido').classList.remove('oculto');
-        document.getElementById('emocion-contenido').scrollIntoView({ behavior: 'smooth' });
+        const contenido = document.getElementById('emocion-contenido');
+        contenido.classList.remove('oculto');
+        
+        setTimeout(() => {
+            contenido.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }, 100);
     });
 });
 
@@ -91,7 +99,9 @@ document.getElementById('cerrar-emocion').addEventListener('click', function() {
     document.getElementById('emocion-contenido').classList.add('oculto');
 });
 
+// =========================================
 // FUNCIONALIDAD DEL TEST
+// =========================================
 document.getElementById('calcular-test').addEventListener('click', function() {
     let total = 0;
     let completas = true;
@@ -106,7 +116,7 @@ document.getElementById('calcular-test').addEventListener('click', function() {
     }
     
     if (!completas) {
-        alert('Por favor responde todas las preguntas');
+        alert('Por favor responde todas las preguntas para darte un resultado preciso.');
         return;
     }
     
@@ -130,6 +140,7 @@ document.getElementById('calcular-test').addEventListener('click', function() {
     document.getElementById('resultado-mensaje').textContent = mensaje;
     document.getElementById('test-formulario').classList.add('oculto');
     document.getElementById('test-resultado').classList.remove('oculto');
+    document.getElementById('test-resultado').scrollIntoView({ behavior: 'smooth' });
 });
 
 document.getElementById('reiniciar-test').addEventListener('click', function() {
@@ -138,20 +149,32 @@ document.getElementById('reiniciar-test').addEventListener('click', function() {
     document.querySelectorAll('input[type="radio"]').forEach(radio => radio.checked = false);
 });
 
+// =========================================
 // FORMULARIO DE AYUDA
+// =========================================
 document.getElementById('form-ayuda').addEventListener('submit', function(e) {
     e.preventDefault();
     alert('¡Gracias por tu mensaje! Te contactaremos pronto. Si es una emergencia, llama a la línea 106.');
     this.reset();
 });
 
-// SCROLL SUAVE
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({ behavior: 'smooth' });
+// =========================================
+// ANIMACIONES AL HACER SCROLL (REVEAL)
+// =========================================
+function revealOnScroll() {
+    const reveals = document.querySelectorAll('.emocion-card, .herramienta-card, .ayuda-card, .pregunta');
+    
+    reveals.forEach(element => {
+        const windowHeight = window.innerHeight;
+        const elementTop = element.getBoundingClientRect().top;
+        const elementVisible = 100;
+        
+        if (elementTop < windowHeight - elementVisible) {
+            element.classList.add('reveal', 'active');
         }
     });
-});
+}
+
+window.addEventListener('scroll', revealOnScroll);
+// Llamar una vez al cargar para mostrar los elementos que ya están en pantalla
+revealOnScroll();
