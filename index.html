@@ -183,4 +183,164 @@
                 </div>
 
                 <div class="pregunta">
-                    <p><strong>4.</strong> ¿Has tenido poco interés
+                    <p><strong>4.</strong> ¿Has tenido poco interés o placer en hacer cosas?</p>
+                    <label class="radio-custom"><input type="radio" name="p4" value="0"> <span>Nunca</span></label>
+                    <label class="radio-custom"><input type="radio" name="p4" value="1"> <span>Algunos días</span></label>
+                    <label class="radio-custom"><input type="radio" name="p4" value="2"> <span>Más de la mitad de los días</span></label>
+                    <label class="radio-custom"><input type="radio" name="p4" value="3"> <span>Casi todos los días</span></label>
+                </div>
+
+                <div class="pregunta">
+                    <p><strong>5.</strong> ¿Cómo calificarías tu calidad de sueño en la última semana?</p>
+                    <label class="radio-custom"><input type="radio" name="p5" value="0"> <span>Excelente</span></label>
+                    <label class="radio-custom"><input type="radio" name="p5" value="1"> <span>Buena</span></label>
+                    <label class="radio-custom"><input type="radio" name="p5" value="2"> <span>Regular</span></label>
+                    <label class="radio-custom"><input type="radio" name="p5" value="3"> <span>Mala</span></label>
+                </div>
+
+                <button id="calcular-test" class="btn-primary btn-large">Ver resultado</button>
+            </div>
+
+            <div id="test-resultado" class="test-resultado glass-card oculto">
+                <div class="resultado-icon" id="resultado-icon">🌟</div>
+                <h3 id="resultado-titulo"></h3>
+                <p id="resultado-mensaje"></p>
+                <button id="reiniciar-test" class="btn-secondary">Responder de nuevo</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN: HERRAMIENTAS -->
+    <section id="herramientas" class="herramientas">
+        <div class="container">
+            <h2 class="section-title reveal">Herramientas para tu bienestar</h2>
+            <p class="section-subtitle reveal">Técnicas prácticas basadas en evidencia para manejar tus emociones</p>
+            
+            <div class="herramientas-grid">
+                <div class="herramienta-card glass-card reveal">
+                    <div class="tool-icon">🌬️</div>
+                    <h3>Respiración 4-7-8</h3>
+                    <p>Activa tu sistema nervioso parasimpático para calmarte en minutos.</p>
+                    <ol class="tool-steps">
+                        <li>Siéntate cómodamente</li>
+                        <li>Inhala por la nariz contando hasta 4</li>
+                        <li>Sostén la respiración contando hasta 7</li>
+                        <li>Exhala por la boca contando hasta 8</li>
+                        <li>Repite 3-4 veces</li>
+                    </ol>
+                    <button class="btn-tool" onclick="alert('Practica esta técnica ahora: Inhala... 1-2-3-4, Sostén... 1-2-3-4-5-6-7, Exhala... 1-2-3-4-5-6-7-8')">Iniciar ejercicio</button>
+                </div>
+
+                <div class="herramienta-card glass-card reveal delay-1">
+                    <div class="tool-icon">👁️</div>
+                    <h3>Grounding 5-4-3-2-1</h3>
+                    <p>Técnica de anclaje sensorial para momentos de ansiedad.</p>
+                    <ul class="tool-steps">
+                        <li>Nombra 5 cosas que puedes VER</li>
+                        <li>Nombra 4 cosas que puedes TOCAR</li>
+                        <li>Nombra 3 cosas que puedes OÍR</li>
+                        <li>Nombra 2 cosas que puedes OLER</li>
+                        <li>Nombra 1 cosa que puedes SABOREAR</li>
+                    </ul>
+                </div>
+
+                <div class="herramienta-card glass-card reveal delay-2">
+                    <div class="tool-icon">📝</div>
+                    <h3>Journaling emocional</h3>
+                    <p>Escribir tus pensamientos ayuda a procesarlos.</p>
+                    <p><strong>Prompts sugeridos:</strong></p>
+                    <ul class="tool-steps">
+                        <li>"Hoy me siento..."</li>
+                        <li>"Lo que más me preocupa es..."</li>
+                        <li>"Algo por lo que estoy agradecido es..."</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN: PIDE AYUDA -->
+    <section id="ayuda" class="ayuda">
+        <div class="container">
+            <h2 class="section-title reveal">No tienes que hacerlo solo</h2>
+            <p class="section-subtitle reveal">Hay personas y recursos listos para ayudarte</p>
+            
+            <div class="ayuda-grid">
+                <div class="ayuda-card glass-card reveal">
+                    <div class="ayuda-icon">📞</div>
+                    <h3>Línea 106</h3>
+                    <p>Servicio gratuito de orientación psicológica 24/7 en Colombia</p>
+                    <p><strong>Teléfono:</strong> 106</p>
+                    <p><strong>Horario:</strong> 24 horas, todos los días</p>
+                    <a href="tel:106" class="btn-secondary btn-small">Llamar ahora</a>
+                </div>
+
+                <div class="ayuda-card glass-card reveal delay-1">
+                    <div class="ayuda-icon">🏥</div>
+                    <h3>Psicólogos del SENA</h3>
+                    <p>Servicio de bienestar psicológico para estudiantes</p>
+                    <p><strong>Contacto:</strong> [Info de tu centro]</p>
+                    <p><strong>Horario:</strong> [Horario real]</p>
+                    <button class="btn-secondary btn-small">Agendar cita</button>
+                </div>
+
+                <div class="ayuda-card glass-card reveal delay-2">
+                    <div class="ayuda-icon">📧</div>
+                    <h3>Formulario de solicitud</h3>
+                    <p>Completa este formulario y te contactaremos</p>
+                    <form id="form-ayuda" class="ayuda-form">
+                        <input type="text" placeholder="Nombre (opcional)" class="form-input">
+                        <input type="email" placeholder="Correo electrónico" required class="form-input">
+                        <select required class="form-input">
+                            <option value="">¿Qué tipo de apoyo necesitas?</option>
+                            <option value="orientacion">Orientación</option>
+                            <option value="cita">Cita con psicólogo</option>
+                            <option value="crisis">Crisis</option>
+                        </select>
+                        <textarea placeholder="Mensaje (opcional)" rows="4" class="form-input"></textarea>
+                        <button type="submit" class="btn-primary btn-small">Enviar solicitud</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN: CRISIS -->
+    <section id="crisis" class="crisis">
+        <div class="container">
+            <h2>🚨 ¿Estás en crisis?</h2>
+            <p>Si estás pensando en hacerte daño o sientes que no puedes más, contacta AHORA:</p>
+            <ul class="crisis-list">
+                <li><strong>Línea 106:</strong> 106 (24/7, gratuito)</li>
+                <li><strong>Línea de emergencia:</strong> 123</li>
+                <li><strong>Acude al hospital más cercano</strong></li>
+            </ul>
+            <p class="mensaje-final">No estás solo. Hay personas que quieren ayudarte. 💚</p>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span>🧠</span>
+                    <h3>CalmaMente</h3>
+                </div>
+                <p>Tu bienestar emocional es nuestra prioridad</p>
+                <div class="footer-links">
+                    <a href="#inicio">Inicio</a>
+                    <a href="#emociones">Emociones</a>
+                    <a href="#test">Test</a>
+                    <a href="#ayuda">Ayuda</a>
+                </div>
+                <p class="footer-copy">CalmaMente © 2026</p>
+                <p class="footer-sena">Un proyecto desarrollado para el SENA</p>
+                <p class="footer-valentia">Recuerda: pedir ayuda es un acto de valentía 💙</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
